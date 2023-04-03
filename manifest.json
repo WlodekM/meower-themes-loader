@@ -1,23 +1,43 @@
 {
-    "name": "Theme Loader",
-    "version": "1.0.0",
-    "description": "Load ur mower themes",
-    "permissions": [
-      "activeTab",
-      "storage",
-      "scripting"
-    ],
-    "manifest_version": 3,
-    "author": "WlodekM",
-    "action":{
-        "default_popup": "popup.html",
-        "default_title": "Theme Loader"
-    },
+    "manifest_version": 2,
+    "name": "Theme Injector",
+    "version": "0.3.3",
+
+    "author": "L.Sabatelli",
+    "description": "Inject code into websites! (JavaScript, CSS, HTML and Files)",
+    "permissions": [ "<all_urls>", "tabs", "activeTab", "storage", "webNavigation" ],
+
     "icons": {
-        "128": "128.png"
-      },
-    "options_page": "options.html",
+        "16": "style/images/icon/icon-16px.png",
+        "24": "style/images/icon/icon-24px.png",
+        "32": "style/images/icon/icon-32px.png",
+        "48": "style/images/icon/icon-48px.png",
+        "64": "style/images/icon/icon-64px.png",
+        "96": "style/images/icon/icon-96px.png"
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "16": "style/images/icon/icon-16px.png",
+            "24": "style/images/icon/icon-24px.png",
+            "32": "style/images/icon/icon-32px.png",
+            "48": "style/images/icon/icon-48px.png",
+            "64": "style/images/icon/icon-64px.png",
+            "96": "style/images/icon/icon-96px.png"
+        },
+        "default_title": "Code Injector",
+        "default_popup": "html/browser-action.html"
+    },
+
     "background": {
-      "service_worker": "background.js"
+        "scripts": [
+            "script/browser-polyfill.min.js", 
+            "script/background.js"
+        ]
+    },
+
+    "options_ui": {
+        "page": "html/options-ui.html"
     }
+
 }
