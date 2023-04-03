@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Test Extension Options</title>
+<style>body{border-radius: 20px;padding-bottom:10px;width: 512.5px;height:1000px;border-radius:5px;background-color:#1b1b1d;}p{color:#fafafa;}h1{color:#fafafa;}h2{color:#fafafa;}h3{color:#fafafa;}h4{color:#fafafa;}h5{color:#fafafa;}h6{color:#fafafa;}
+    blockquote {background-color: rgba(255, 255, 255, 0.1);border-left: 5px solid  rgba(255, 255, 255, 0.288); padding-left: 5px; margin-bottom: 5px;}
+    /* width */
+.container {padding-bottom:5px;padding-top:5px;border: 5px solid rgb(31, 31, 31);}
+button
+a{color:#fafafa;text-decoration: underline;}
+::-webkit-scrollbar {
+width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+border-radius: 5px;
+background: rgb(63, 63, 63);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgb(112, 112, 112);
+border-radius: 5px;
+}
+
+.button5 {
+background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);
+border: 2px solid #161616;
+}
+
+.button5:hover {
+background-color: #1a1a1a;
+color: rgb(255, 255, 255);
+}
+label {color:#fafafa}
+/**/
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: rgb(77, 77, 77);
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #fafafa;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: rgb(83, 83, 83);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+</style>
+</head>
+<body>
+
+<h4>Favorite color:</h4>
+
+<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+<div class="custom-select" style="width:200px;" id="color">
+    <select>
+        <option value="select">Select your favorite color</option>
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="yellow">yellow</option>
+    </select>
+  </div>
+
+<label>
+  <input type="checkbox" id="like">
+  I like colors.
+</label>
+
+<h6 id="status"></h6>
+<button id="save">Save</button>
+
+<script src="options.js"></script>
+</body>
+</html>

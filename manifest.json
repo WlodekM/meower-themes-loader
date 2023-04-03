@@ -1,0 +1,23 @@
+{
+    "name": "Theme Loader",
+    "version": "1.0.0",
+    "description": "Load ur mower themes",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting"
+    ],
+    "manifest_version": 3,
+    "author": "WlodekM",
+    "action":{
+        "default_popup": "popup.html",
+        "default_title": "Theme Loader"
+    },
+    "icons": {
+        "128": "128.png"
+      },
+    "options_page": "options.html",
+    "background": {
+      "service_worker": "background.js"
+    }
+}
